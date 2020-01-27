@@ -158,7 +158,6 @@ class RiddlesActivity : AppCompatActivity() {
     }
 
     private fun checkAnswer(userAnswer: TextView, answer: TextView) {
-        println("User Answer: ${userAnswer.text.toString()} Answer: ${answer.text}")
         if (userAnswer.text.toString() == answer.text.toString()) {
             Snackbar.make(tvSnackbar, "Correct!", Snackbar.LENGTH_SHORT).show()
         } else {

@@ -2,9 +2,10 @@
 
     <!-- home -->
     <string name="app_name">RiddleMeThis</string>
-    <string name="home_text">Can you find all the answers?</string>
+    <string name="home_text">Current Day</string>
     <string name="home_button">Get started!</string>
     <string name="home_bg_content">Question mark</string>
+    <string name="day_button">Load Day</string>
 
     <!-- material card -->
     <string name="riddleItemTitle">Title</string>

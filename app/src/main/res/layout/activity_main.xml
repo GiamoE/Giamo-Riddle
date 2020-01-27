@@ -55,4 +55,20 @@
         app:layout_constraintTop_toBottomOf="@+id/tvHome"
         app:layout_constraintVertical_bias="1.0" />
 
+    <Button
+        android:id="@+id/btnDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_button"
+        android:padding="20dp"
+        android:text="@string/day_button"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="383dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
