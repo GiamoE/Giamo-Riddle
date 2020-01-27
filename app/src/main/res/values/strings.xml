@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- home -->
+    <string name="app_name">RiddleMeThis</string>
+    <string name="home_text">Can you find all the answers?</string>
+    <string name="home_button">Get started!</string>
+    <string name="home_bg_content">Question mark</string>
+
+    <!-- material card -->
+    <string name="riddleItemTitle">Title</string>
+    <string name="riddleContent">Content</string>
+    <string name="riddleAnswer">Answer</string>
+    <string name="answerButton">Check Answer</string>
+    <string name="answerTitle">Swipe right for the answer</string>
+    <string name="userAnswer">Fill in your answer</string>
+    <string name="answerCheck">Swipe left to check your answer</string>
+
+    <!-- error message -->
+    <string name="fill_fields">Please fill in all fields.</string>
+
+    <!-- extra -->
+    <string name="action_settings">Settings</string>
+    <string name="add_riddle">Add Riddle</string>
+    <string name="update_riddle">Update Riddle</string>
+    <string name="username">User</string>
+
+</resources>

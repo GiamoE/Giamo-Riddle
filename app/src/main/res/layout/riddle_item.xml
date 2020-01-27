@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/mtrl_card_spacing"
+    android:layout_marginTop="@dimen/mtrl_card_spacing"
+    android:layout_marginRight="@dimen/mtrl_card_spacing"
+    android:layout_marginBottom="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="240dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/riddleItemTitle"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:text="@string/riddleAnswer"
+            android:textColor="@color/colorWhite"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toEndOf="@+id/tvContent" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/riddleContent"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <TextView
+            android:id="@+id/tvAnswerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="3dp"
+            android:text="@string/answerTitle"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAnswerCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="3dp"
+            android:text="@string/answerCheck"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@+id/tvAnswerTitle"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilRiddleName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@+id/tvAnswerTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContent"
+            app:layout_constraintWidth_percent="0.60">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUserAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/userAnswer"
+                android:inputType="text"
+                android:maxLines="1"
+                android:overScrollMode="always"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvSnackbar" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="176dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="176dp" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabItemUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:tint="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
