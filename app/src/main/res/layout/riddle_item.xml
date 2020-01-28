@@ -32,6 +32,7 @@
             android:id="@+id/tvAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="70dp"
             android:text="@string/riddleAnswer"
             android:textColor="@color/colorWhite"
@@ -120,7 +121,7 @@
             android:tint="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            app:srcCompat="@android:drawable/ic_menu_edit" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
