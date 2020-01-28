@@ -27,11 +27,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // on Button home click go to the riddles activity
     private fun startRiddlesActivity(){
         val intent = Intent(this, RiddlesActivity::class.java)
         startActivity(intent)
     }
 
+    // listener for the current day button
     private fun initViews() {
         btnDay.setOnClickListener {
             viewModel.getCurrentDay()
@@ -42,11 +44,9 @@ class MainActivity : AppCompatActivity() {
         // Initialize the MainActivityViewModel.
         viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
 
-        // Observe the day object.
+        // Observe the day object. fill the tv with the dotw attribute
         viewModel.day.observe(this, Observer {
-            println("ValueDAY is: $it?.text")
             tvHome.text = it?.dayOfTheWeak
-            println("ValueDAYX is: $it?.text")
         })
 
         // Observe the error message.

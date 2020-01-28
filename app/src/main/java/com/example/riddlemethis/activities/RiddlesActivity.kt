@@ -43,6 +43,8 @@ class RiddlesActivity : AppCompatActivity() {
         initViews()
     }
 
+    // here we position the items within the recyclerview by using a layout.
+    // we also add some decoration so the items have a small "gap"
     private fun initViews() {
         rvRiddles.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         rvRiddles.adapter = riddleAdapter
@@ -98,11 +100,13 @@ class RiddlesActivity : AppCompatActivity() {
                 val userAnswer = viewHolder.itemView.etUserAnswer
                 val updateButton = viewHolder.itemView.fabItemUpdate
 
+                // on left swipe check for the answer
                 if (direction == ItemTouchHelper.LEFT) {
                     checkAnswer(userAnswer, answer)
                     riddleAdapter.notifyItemChanged(viewHolder.adapterPosition)
                 }
 
+                // on right swipe show the answer
                 if (direction == ItemTouchHelper.RIGHT) {
                     showAnswer(answer)
                     updateButton.setOnClickListener { startUpdateActivity() }
@@ -113,6 +117,11 @@ class RiddlesActivity : AppCompatActivity() {
         return ItemTouchHelper(callback)
     }
 
+    // delete * from riddles table.
+    // use the Coroutine pattern to handle potential long running tasks in asynch
+    // the Dispatchers.Main makes it run on a main thread
+    // while the Dispatchers.IO is used for disk / network processes
+    // use withContext to run it in a thread pool
     private fun deleteRiddlesList() {
         CoroutineScope(Dispatchers.Main).launch {
             withContext(Dispatchers.IO) {
@@ -130,9 +139,7 @@ class RiddlesActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // Handle action bar item clicks here. Like the delete all riddles option
         return when (item.itemId) {
             R.id.action_delete_shopping_list -> {
                 deleteRiddlesList()
@@ -145,7 +152,7 @@ class RiddlesActivity : AppCompatActivity() {
     private fun getRiddleListFromDatabase() {
         CoroutineScope(Dispatchers.Main).launch {
             val riddlesList = withContext(Dispatchers.IO) {
-                riddleRepository.getAllProducts()
+                riddleRepository.getAllRiddles()
             }
             this@RiddlesActivity.riddlesList.clear()
             this@RiddlesActivity.riddlesList.addAll(riddlesList)
@@ -153,10 +160,12 @@ class RiddlesActivity : AppCompatActivity() {
         }
     }
 
+    // visibility is standard invisible, set it to visible when called.
     private fun showAnswer(answer: TextView) {
         answer.visibility = View.VISIBLE
     }
 
+    // compare the two text view's text values.
     private fun checkAnswer(userAnswer: TextView, answer: TextView) {
         if (userAnswer.text.toString() == answer.text.toString()) {
             Snackbar.make(tvSnackbar, "Correct!", Snackbar.LENGTH_SHORT).show()

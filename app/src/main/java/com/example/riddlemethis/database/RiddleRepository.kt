@@ -12,7 +12,7 @@ class RiddleRepository(context: Context) {
         riddleDao = database!!.riddleDao()
     }
 
-    suspend fun getAllProducts(): List<Riddle> {
+    suspend fun getAllRiddles(): List<Riddle> {
         return riddleDao.getAllRiddles()
     }
 

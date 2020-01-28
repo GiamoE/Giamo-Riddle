@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface DayApiService {
-    // The GET method needed to retrieve a random number trivia.
+    // The GET method needed to retrieve date & time data from the API
     @GET("/api/json/cet/now?")
     fun getCurrentDay(): Call<Day>
 }

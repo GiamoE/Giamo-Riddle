@@ -37,6 +37,8 @@ class UpdateActivity : AppCompatActivity() {
         fabUpdate.setOnClickListener { updateRiddle() }
     }
 
+    // check if all the fields are filled in.
+    // after this update the riddle object.
     private fun updateRiddle() {
         if (validateFields()) {
             CoroutineScope(Dispatchers.Main).launch {
@@ -69,7 +71,7 @@ class UpdateActivity : AppCompatActivity() {
     private fun getRiddleListFromDatabase() {
         CoroutineScope(Dispatchers.Main).launch {
             val riddlesList = withContext(Dispatchers.IO) {
-                riddleRepository.getAllProducts()
+                riddleRepository.getAllRiddles()
             }
             this@UpdateActivity.riddlesList.clear()
             this@UpdateActivity.riddlesList.addAll(riddlesList)

@@ -4,7 +4,7 @@ class DayRepository {
 
     /*
     In the repository class a variable is created for the api service.
-    The method getRandomNumberTrivia returns the Call<Trivia> from the api service.
+    The method getCurrentDay returns a call from the repository
      */
     private val dayApi: DayApiService = DayApi.createApi()
 

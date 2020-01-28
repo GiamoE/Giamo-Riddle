@@ -38,6 +38,8 @@ class AddActivity : AppCompatActivity() {
         fabAdd.setOnClickListener { addRiddle() }
     }
 
+    // first check if the fields are filled in.
+    // after this create a riddle Object and insert this to add
     private fun addRiddle() {
         if (validateFields()) {
             CoroutineScope(Dispatchers.Main).launch {
@@ -70,7 +72,7 @@ class AddActivity : AppCompatActivity() {
     private fun getRiddleListFromDatabase() {
         CoroutineScope(Dispatchers.Main).launch {
             val riddlesList = withContext(Dispatchers.IO) {
-                riddleRepository.getAllProducts()
+                riddleRepository.getAllRiddles()
             }
             this@AddActivity.riddlesList.clear()
             this@AddActivity.riddlesList.addAll(riddlesList)

@@ -31,19 +31,12 @@ class RiddleAdapter(private val riddles: List<Riddle>) :
         holder.bind(riddles[position])
     }
 
+    // bind the text values to the riddle attributes.
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(riddle: Riddle) {
             itemView.tvName.text = riddle.name
             itemView.tvContent.text = riddle.description
             itemView.tvAnswer.text = riddle.answer
-
-//            itemView.fabItemUpdate.setOnClickListener { startUpdateActivity() }
         }
     }
-
-//    private lateinit var context: Context
-//
-//    private fun startUpdateActivity() {
-//        context.startActivity(Intent(context, UpdateActivity::class.java))
-//    }
 }
